@@ -24,7 +24,7 @@ class AddSpendingForm extends Component {
         <form>
           <input
             type="text"
-            placeholder="What?"
+            placeholder="What you've spent on?"
             name="title"
             value={title}
             onChange={this.onValueChange}
