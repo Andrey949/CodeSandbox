@@ -1,6 +1,8 @@
 import { Component } from "react";
 import "./App.css";
 
+import AddSpendingForm from "../src/components/Form";
+
 //practice of React properties (PROPS) (video #127)
 // function WhoAmI (props) {
 //   return (
@@ -12,15 +14,16 @@ import "./App.css";
 // } -  DESTRUCTURED SYNTAX BELOW
 
 /*functions can be props, too*/
-function WhoAmI ({name, surname, link}) {
+function WhoAmI({ name, surname, link }) {
   return (
     <div>
-      <h1>My name is {name()}, surname – {surname}</h1>
+      <h1>
+        My name is {name()}, surname – {surname}
+      </h1>
       <a href={link}>My profile</a>
     </div>
-  )
+  );
 }
-
 
 const Header = () => {
   return <h2>Hi</h2>;
@@ -28,7 +31,7 @@ const Header = () => {
 
 const Field = () => {
   const styledField = {
-    width: "300px"
+    width: "300px",
   };
   return <input placeholder="Type here" type="text" style={styledField} />;
 };
@@ -36,7 +39,7 @@ const Field = () => {
 class Field2 extends Component {
   render() {
     const styledField = {
-      width: "250px"
+      width: "250px",
     };
 
     return (
@@ -62,8 +65,21 @@ function App() {
       <Field />
       <Btn />
       <Field2 />
-      <WhoAmI name={() => {return('Al')}} surname='Ivanov' link='https://www.youtube.com/'/>
-      <WhoAmI name={() => {return('John')}} surname='Baton' link='https://www.facebook.co/'/>
+      <WhoAmI
+        name={() => {
+          return "Al";
+        }}
+        surname="Ivanov"
+        link="https://www.youtube.com/"
+      />
+      <WhoAmI
+        name={() => {
+          return "John";
+        }}
+        surname="Baton"
+        link="https://www.facebook.co/"
+      />
+      <AddSpendingForm />
     </div>
   );
 }
